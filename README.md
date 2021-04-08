@@ -8,7 +8,7 @@
 
 ### Build the installer folder
 Use the zip file provided to you or build the installed folder as follows:
-1. Extract the AS, SDK and Liveassist zip files to their respective folder under /installer
+1. Extract the AS, SDK and Liveassist zip files to their respective folders under /installer
 ```
 /fas
 /sdk
@@ -17,8 +17,8 @@ Use the zip file provided to you or build the installed folder as follows:
 
 2. Add the **media broker .gz** file to the /installer folder
 
-3. Edit the **.properties** files for each install to suit your environment
-- NB: For all files, leave the local IP of the fas server as 172.16.0.2 \
+3. Edit the **.properties** files for each install to suit your environment \
+**NB:** For all files, leave the local IP of the fas server as 172.16.0.2 \
 **as-installer-2.5.21.advanced-install.properties** \
 `accept.eula=yes` \
 `JDKPath=/usr/java/latest` \
