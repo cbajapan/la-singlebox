@@ -1,5 +1,5 @@
 # la-singlebox installation
-These files will assist you to setup up a Live Asssit singlebox solution *for testing/demonstration purposes only.*
+These files will assist you to setup up a Live Assist singlebox solution *for testing/demonstration purposes only.*
 
 ### You will need:
 - Docker installed and running - Windows or Linux  
