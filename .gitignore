@@ -348,3 +348,12 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# CBA files
+installer/cbala-install-status
+installer/media-broker*
+installer/fas*
+installer/sdk*
+installer/liveassist*
+*.DS_Store
+
