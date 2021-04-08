@@ -1,0 +1,29 @@
+version: "3.9" # optional since v1.27.0
+services:
+ singlebox:
+  platform: linux/amd64
+  image: cbajapan/cbala-base
+  ports:
+   - "9999:9999"
+   - "9990:9990"
+   - "8080:8080"
+   - "8443:8443"
+   - "16000-16004:16000-16004/tcp"
+   - "16000-16004:16000-16004/udp"
+  volumes:
+   - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+   - ./installer:/installer
+  cap_add:
+   - ALL
+  networks:
+    cbala_net:
+     ipv4_address: 172.16.0.2
+  command: sh -c "chmod +x ./cmd.sh && exec ./cmd.sh"
+networks:
+ cbala_net:
+  driver: bridge
+  ipam:
+   driver: default
+   config:
+     - subnet: 172.16.0.0/24
+       gateway: 172.16.0.1
