@@ -1,14 +1,14 @@
 # la-singlebox installation
-These files will assist you to setup up a Live Assist singlebox solution *for testing/demonstration purposes only.*
+These files will assist you to setup up a CBA Live Assist singlebox solution *for testing/demonstration purposes only.*
 
 ### You will need:
 - Docker installed and running - Windows or Linux  
 (Docker desktop for Mac not working yet!)
-- FAS, FCSDK and LA installation zip files from the reseller portal
+- FAS, FCSDK and Liveassist installation zip files from the reseller portal
 - Media broker gz file from the reseller portal
 
 ### Build the installer folder:
-1. Extract the AS, SDK and Liveassist zip files to their respective folders under /installer
+1. Extract the FAS, FCSDK and Liveassist zip files to their respective folders under the /installer folder
 ```
   /fas
   /sdk
@@ -39,11 +39,11 @@ These files will assist you to setup up a Live Assist singlebox solution *for te
 
 ### Run docker-compose:
 Make sure you are in the root of your newly created folder.
-- To start the image build and installation run:  
+- To start the image pull and installation run:  
 `docker-compose up` (It takes around 15 min to complete depending on internet speed)
 - This will pull down a base image and start the installation of your singlebox solution in a new docker container allwoing you to watch it interactively)
 - Once the FAS and MB services are restarted, press `Ctrl-c` to shut down the container
-- To start the singlebox (running in *detached* mode) run:  
+- To start the singlebox container (running in *detached* mode) run:  
 `docker-compose up -d`		
 - To stop the container run:  
 `docker-compose stop`
