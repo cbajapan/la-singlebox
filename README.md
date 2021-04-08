@@ -1,8 +1,8 @@
 # la-singlebox installation
 
 ### You will need:
-- Docker installed and running - Windows or Linux
-  - (Docker desktop for Mac not working yet!)
+- Docker installed and running - Windows or Linux \
+    (Docker desktop for Mac not working yet!)
 - FAS, FCSDK and LA installation zip files from the reseller portal
 - Media broker gz file
 
