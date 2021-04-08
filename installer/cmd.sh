@@ -2,14 +2,22 @@
 
 #Install singlebox solution
 if [[ ! -f /installer/cbala-install-status ]]; then
-
 mkdir /opt/cafex -p
 
-java -jar ./fas/as-installer-2.5.21.jar -options ./fas/as-installer-2.5.21.advanced-install.properties 
+# FAS install
+AS_INSTALLER=$(ls ./fas/*.jar)
+AS_OPTIONS=$(ls ./fas/*.advanced-install.properties)
+java -jar  $AS_INSTALLER -options $AS_OPTIONS
 
-java -jar ./sdk/fusion_client_core_sdk_installer-3.3.17.jar -options ./sdk/fusion_client_core_sdk_installer-3.3.17.advanced-install.properties
+# SDK install
+SDK_INSTALLER=$(ls ./sdk/*.jar)
+SDK_OPTIONS=$(ls ./sdk/*.advanced-install.properties)
+java -jar $SDK_INSTALLER -options $SDK_OPTIONS
 
-java -jar ./liveassist/cafex_live_assist_installer-1.64.3.jar -options ./liveassist/cafex_live_assist_installer-1.64.3.production.properties
+# LA install
+LA_INSTALLER=$(ls ./liveassist/*.jar)
+LA_OPTIONS=$(ls ./liveassist/*.advanced-install.properties)
+java -jar $LA_INSTALLER -options $LA_OPTIONS
 
 # Create check file for completed install
 echo "completed" > /installer/cbala-install-status
