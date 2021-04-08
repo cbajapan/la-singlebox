@@ -31,7 +31,7 @@
 - cafex_live_assist_installer-1.64.3.production.properties
     accept.eula=yes
     JDKPath=/usr/java/latest
-    appserver.admin.address=172.16.0.2![image](https://user-images.githubusercontent.com/80451321/114006452-bc65c280-9860-11eb-980e-c3bab983c5b0.png)
+    appserver.admin.address=172.16.0.2
 
 
 4. Make sure you are the root of your newly created folder. The following process should pull down a base image and start the installation of your singlebox solution in a new docker container:
