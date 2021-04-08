@@ -16,7 +16,7 @@ java -jar $SDK_INSTALLER -options $SDK_OPTIONS
 
 # LA install
 LA_INSTALLER=$(ls ./liveassist/*.jar)
-LA_OPTIONS=$(ls ./liveassist/*.advanced-install.properties)
+LA_OPTIONS=$(ls ./liveassist/*.production.properties)
 java -jar $LA_INSTALLER -options $LA_OPTIONS
 
 # Create check file for completed install
