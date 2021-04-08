@@ -15,20 +15,20 @@
 
 3. Edit the .properties files for each install to suit your environment
 - NB: For all files, leave the local IP of the fas server as 172.16.0.2
-- as-installer-2.5.21.advanced-install.properties
-`accept.eula=yes`
-`JDKPath=/usr/java/latest`
-`bind.address.service=172.16.0.2`
-`bind.address.management=172.16.0.2`
-`cluster.address=[your external IP / FQDN]`
-- fusion_client_core_sdk_installer-3.3.17.advanced-install.properties
+**as-installer-2.5.21.advanced-install.properties
+`accept.eula=yes` \
+`JDKPath=/usr/java/latest` \
+`bind.address.service=172.16.0.2` \
+`bind.address.management=172.16.0.2` \
+`cluster.address=[your external IP / FQDN]` \
+**fusion_client_core_sdk_installer-3.3.17.advanced-install.properties
 `accept.eula=yes`
 `JDKPath=/usr/java/latest`
 `packs=COMMON,GATEWAY,CORE_SDK,MEDIABROKER,SAMPLE_APP`
 `appserver.admin.address=172.16.0.2`
 `gateway.controlled_domain=[your external IP / FQDN]`
 `rtp_proxy_native.tarball.file=/installer/media-broker-native-el7-x86_64-11.tar.gz`
-- cafex_live_assist_installer-1.64.3.production.properties
+**cafex_live_assist_installer-1.64.3.production.properties
 `accept.eula=yes`
 `JDKPath=/usr/java/latest`
 `appserver.admin.address=172.16.0.2`
