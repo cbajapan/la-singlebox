@@ -56,7 +56,7 @@ if (( $(ps -ef | grep -v grep | grep fas | wc -l) > 0 )) && \
   echo -e "\e[1;32m Live Assist components are running! \e[0m" 
   else 
       echo -e "\e[1;31m There was a problem starting all CBA Live Assist components."
-     # exit
+      exit
 
 fi
 
