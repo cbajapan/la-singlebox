@@ -40,8 +40,10 @@ if [[ ! -f /installer/cbala-install-status ]]; then
 
 else 
   # Start FAS and Media Broker
-  [ -f /etc/init.d/fas ] && /etc/init.d/fas start || echo $'No fas service file found.\nDelete /installer/cbala-install-status to re-install'
-  [ -f /etc/init.d/fusion_media_broker ] && /etc/init.d/fusion_media_broker start || echo $'No media broker service file found.\nDelete /installer/cbala-install-status  to re-install'                          
+  [ -f /etc/init.d/fas ] && /etc/init.d/fas start || \
+  echo $'No fas service file found.\nDelete /installer/cbala-install-status to re-install'
+  [ -f /etc/init.d/fusion_media_broker ] && /etc/init.d/fusion_media_broker start || \
+  echo $'No media broker service file found.\nDelete /installer/cbala-install-status  to re-install'                          
 fi
 
 if (( $(ps -ef | grep -v grep | grep fas | wc -l) > 0 )) && \
