@@ -13,7 +13,7 @@ For Linux systems, use one of the supported platforms and follow along here:
 https://docs.docker.com/engine/install/#server
 
 ### Build the installer folder:
-1. Clone this repo to a new folder (or download the contents)
+1. Clone this repo (or download the contents to a new folder)
 2. Extract the FAS, FCSDK and Liveassist zip files to their respective folders under the /installer folder
 3. Add the **media broker .gz** file to the /installer folder
 4. Edit the **.properties** files for each install to suit your environment:  
