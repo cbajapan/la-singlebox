@@ -8,7 +8,7 @@ These files will assist you to setup up a CBA Live Assist singlebox solution *fo
 - Media broker gz file from the reseller portal
 
 ### Getting Docker installed:
-For Windows 10 systems please follow the instructions to install Docker Desktop:
+For Windows 10 systems please follow the instructions to install Docker Desktop:  
 https://docs.docker.com/docker-for-windows/install/
 For Linux systems, use one of the supported platforms and follow along here:
 https://docs.docker.com/engine/install/#server
