@@ -1,5 +1,5 @@
 # la-singlebox installation
-These files will assist you to setup up a CBA Live Assist singlebox solution *for testing/demonstration purposes only.*
+These files will assist you to setup up a CBA Live Assist singlebox solution *for testing/demonstration purposes only*
 
 ### You will need:
 - Docker installed and running - Windows or Linux (due to limitations on Docker desktop for Mac this is not supported)
@@ -11,7 +11,6 @@ For Windows 10 systems please follow the instructions to install Docker Desktop:
 https://docs.docker.com/docker-for-windows/install/  
 For Linux systems, use one of the supported platforms and follow along here:  
 https://docs.docker.com/engine/install/#server
-
 
 ### Build the installer folder:
 1. Clone this repo to a new folder (or download the contents)
@@ -36,7 +35,7 @@ https://docs.docker.com/engine/install/#server
 `accept.eula=yes`  
 `JDKPath=/usr/java/latest`  
 `appserver.admin.address=172.16.0.2`
-5. Your folder should look something like this
+5. Your folder should look something like this:
 ````
 .
 ├── docker-compose.yml
@@ -67,7 +66,7 @@ https://docs.docker.com/engine/install/#server
 ### Run docker-compose:
 Make sure you are in the root of your newly created folder.
 - To start the image pull and installation run:  
-`docker-compose up` (It takes around 15 min to complete depending on internet speed)
+`docker-compose up` (FYI: It takes around 15 min to complete the first time, depending on internet speed)
 - This will pull down a base image and start the installation of your singlebox solution in a new docker container allwoing you to watch it interactively)
 - Once the FAS and MB services are restarted, press `Ctrl-c` to shut down the container
 - To start the singlebox container (running in *detached* mode) run:  
