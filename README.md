@@ -14,16 +14,10 @@ https://docs.docker.com/engine/install/#server
 
 
 ### Build the installer folder:
-1. Extract the FAS, FCSDK and Liveassist zip files to their respective folders under the /installer folder
-```
-  /fas
-  /sdk
-  /liveassist
-```
-
-2. Add the **media broker .gz** file to the /installer folder
-
-3. Edit the **.properties** files for each install to suit your environment:  
+1. Clone this repo to a new folder (or download the contents)
+2. Extract the FAS, FCSDK and Liveassist zip files to their respective folders under the /installer folder
+3. Add the **media broker .gz** file to the /installer folder
+4. Edit the **.properties** files for each install to suit your environment:  
 [**NB:** For all files, leave the local IP of the fas server as 172.16.0.2]  
 **as-installer-x.x.x.advanced-install.properties**  
 `accept.eula=yes`  
@@ -42,6 +36,33 @@ https://docs.docker.com/engine/install/#server
 `accept.eula=yes`  
 `JDKPath=/usr/java/latest`  
 `appserver.admin.address=172.16.0.2`
+5. Your folder should look something like this
+6. ````
+.
+├── docker-compose.yml
+├── dockerfile
+└── installer
+    ├── cmd.sh
+    ├── fas
+    │   ├── as-installer-2.5.21.advanced-install.properties
+    │   ├── as-installer-2.5.21.jar
+    │   ├── as-installer-2.5.21.quick-install.properties
+    │   ├── as-installer-2.5.21.upgrade-install.properties
+    │   └── log4j.properties
+    ├── liveassist
+    │   ├── EULA.txt
+    │   ├── cafex_live_assist_installer-1.64.3.jar
+    │   ├── cafex_live_assist_installer-1.64.3.production.properties
+    │   ├── cafex_live_assist_installer-1.64.3.trial_environment.properties
+    │   └── log4j.properties
+    ├── media-broker-native-el7-x86_64-11.tar.gz
+    └── sdk
+        ├── EULA.txt
+        ├── fusion_client_core_sdk_installer-3.3.17.advanced-install.properties
+        ├── fusion_client_core_sdk_installer-3.3.17.jar
+        ├── fusion_client_core_sdk_installer-3.3.17.quick-install.properties
+        ├── fusion_client_core_sdk_installer-3.3.17.upgrade-install.properties
+        ````
 
 ### Run docker-compose:
 Make sure you are in the root of your newly created folder.
