@@ -37,7 +37,7 @@ https://docs.docker.com/engine/install/#server
 `JDKPath=/usr/java/latest`  
 `appserver.admin.address=172.16.0.2`
 5. Your folder should look something like this
-6. ````
+````
 .
 ├── docker-compose.yml
 ├── dockerfile
