@@ -62,8 +62,8 @@ https://docs.docker.com/engine/install/#server
         ├── fusion_client_core_sdk_installer-3.3.17.jar
         ├── fusion_client_core_sdk_installer-3.3.17.quick-install.properties
         ├── fusion_client_core_sdk_installer-3.3.17.upgrade-install.properties
-        ````
-
+        
+````
 ### Run docker-compose:
 Make sure you are in the root of your newly created folder.
 - To start the image pull and installation run:  
