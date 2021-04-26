@@ -61,6 +61,7 @@ https://docs.docker.com/engine/install/#server
         ├── fusion_client_core_sdk_installer-3.3.17.jar
         ├── fusion_client_core_sdk_installer-3.3.17.quick-install.properties
         ├── fusion_client_core_sdk_installer-3.3.17.upgrade-install.properties
+        └── log4j.properties
         
 ````
 ### Run docker-compose:
