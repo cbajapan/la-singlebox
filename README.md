@@ -7,6 +7,13 @@ These files will assist you to setup up a CBA Live Assist singlebox solution *fo
 - FAS, FCSDK and Liveassist installation zip files from the reseller portal
 - Media broker gz file from the reseller portal
 
+### Getting Docker installed:
+For Windows 10 systems please follow the instructions to install Docker Desktop:
+https://docs.docker.com/docker-for-windows/install/
+For Linux systems, use one of the supported platforms and follow along here:
+https://docs.docker.com/engine/install/#server
+
+
 ### Build the installer folder:
 1. Extract the FAS, FCSDK and Liveassist zip files to their respective folders under the /installer folder
 ```
