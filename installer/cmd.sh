@@ -11,7 +11,7 @@ if [[ ! -f /installer/cbala-install-status ]]; then
   java -jar  $AS_INSTALLER -options $AS_OPTIONS
 
   # FCSDK install
-    if [ $? -eq 0 ]; then
+  if [ $? -eq 0 ]; then
       SDK_INSTALLER=$(ls ./sdk/*.jar)
       SDK_OPTIONS=$(ls ./sdk/*.advanced-install.properties)
       echo -e "\e[1;33mInstalling FCSDK: \e[0m"
