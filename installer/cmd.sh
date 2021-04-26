@@ -1,4 +1,4 @@
-#!/bin/bash                                                                 
+#!/bin/bash
 
 #Install singlebox solution
 if [[ ! -f /installer/cbala-install-status ]]; then
@@ -16,7 +16,7 @@ if [[ ! -f /installer/cbala-install-status ]]; then
       SDK_OPTIONS=$(ls ./sdk/*.advanced-install.properties)
       echo -e "\e[1;33mInstalling FCSDK: \e[0m"
       java -jar $SDK_INSTALLER -options $SDK_OPTIONS
-      else 
+      else
         exit
     fi
 
@@ -26,7 +26,7 @@ if [[ ! -f /installer/cbala-install-status ]]; then
       LA_OPTIONS=$(ls ./liveassist/*.production.properties)
       echo -e "\e[1;33mInstalling Live Assist: \e[0m"
       java -jar $LA_INSTALLER -options $LA_OPTIONS
-      else 
+      else
         exit
     fi
 
@@ -34,11 +34,11 @@ if [[ ! -f /installer/cbala-install-status ]]; then
     if [ $? -eq 0 ]; then
       echo "completed" > /installer/cbala-install-status
       echo -e "\e[1;32mLive Assist installation completed! \e[0m"
-    else 
+    else
       exit
     fi
 
-else 
+else
   # Start FAS and Media Broker if install check file is created
   [ -f /etc/init.d/fas ] && /etc/init.d/fas start || \
   echo -e "\e[1;31mNo fas service file found.\nDelete /installer/cbala-install-status to re-install. \e[1;31m"
@@ -56,9 +56,9 @@ if (( $(ps -ef | grep -v grep | grep fas | wc -l) > 0 )) && \
                                                                     
   "
   echo -e "\e[1;32mLive Assist components are running! \e[0m" 
-  else 
+  else
       echo -e "\e[1;31mThere was a problem starting all CBA Live Assist components. \e[0m"
       exit
 fi
 
-exec /usr/sbin/init 
+exec /usr/sbin/init
