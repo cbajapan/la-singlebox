@@ -3,10 +3,17 @@
 #Install singlebox solution
 if [[ ! -f /installer/cbala-install-status ]]; then
   mkdir /opt/cafex -p
-
+  
   # FAS install
   AS_INSTALLER=$(ls ./fas/*.jar)
   AS_OPTIONS=$(ls ./fas/*.advanced-install.properties)
+  
+  sed -ri -e "s/(accept\.eula=).*/\1true/g" \
+  -e "s/(JDKPath=).*/\1${JDK_PATH//\//\\/}/g" \
+  -e "s/(bind\.address.*=).*/\1$FAS_BIND_ADDRESS/g" \
+  -e "s/(cluster\.address=).*/\1$CLUSTER_ADDRESS/g" \
+  $AS_OPTIONS
+  
   echo -e "\e[1;33mInstalling FAS: \e[0m"
   java -jar  $AS_INSTALLER -options $AS_OPTIONS
 
@@ -14,6 +21,16 @@ if [[ ! -f /installer/cbala-install-status ]]; then
   if [ $? -eq 0 ]; then
       SDK_INSTALLER=$(ls ./sdk/*.jar)
       SDK_OPTIONS=$(ls ./sdk/*.advanced-install.properties)
+      MB_INSTALLER=$(ls -d $PWD/media-broker-native-*)
+      
+      sed -ri -e "s/(accept\.eula=).*/\1true/g" \
+      -e "s/(JDKPath=).*/\1${JDK_PATH//\//\\/}/g" \
+      -e "s/(packs=).*/\1$FCSDK_PACKS/g" \
+      -e "s/(appserver\.admin\.address=).*/\1$FAS_BIND_ADDRESS/g" \
+      -e "s/(gateway\.controlled_domain=).*/\1$CLUSTER_ADDRESS/g" \
+      -e "s/(rtp_proxy_native\.tarball.file=).*/\1${MB_INSTALLER//\//\\/}/g" \
+      $SDK_OPTIONS
+      
       echo -e "\e[1;33mInstalling FCSDK: \e[0m"
       java -jar $SDK_INSTALLER -options $SDK_OPTIONS
       else
@@ -24,6 +41,13 @@ if [[ ! -f /installer/cbala-install-status ]]; then
     if [ $? -eq 0 ]; then
       LA_INSTALLER=$(ls ./liveassist/*.jar)
       LA_OPTIONS=$(ls ./liveassist/*.production.properties)
+      
+      sed -ri -e "s/(accept\.eula=).*/\1true/g" \
+      -e "s/(JDKPath=).*/\1${JDK_PATH//\//\\/}/g" \
+      -e "s/(packs=).*/\1$LA_PACKS/g" \
+      -e "s/(appserver\.admin\.address=).*/\1$FAS_BIND_ADDRESS/g" \
+      $LA_OPTIONS
+      
       echo -e "\e[1;33mInstalling Live Assist: \e[0m"
       java -jar $LA_INSTALLER -options $LA_OPTIONS
       else

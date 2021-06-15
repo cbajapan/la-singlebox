@@ -3,6 +3,12 @@ services:
  singlebox:
   platform: linux/amd64
   image: cbajapan/cbala-base
+  environment:
+    - CLUSTER_ADDRESS
+    - FAS_BIND_ADDRESS
+    - JDK_PATH
+    - FCSDK_PACKS
+    - LA_PACKS
   ports:
    - "9999:9999"
    - "9990:9990"
@@ -17,8 +23,9 @@ services:
    - SYS_ADMIN
   networks:
     cbala_net:
-     ipv4_address: 172.16.0.2
+     ipv4_address: ${FAS_BIND_ADDRESS}
   command: sh -c "chmod +x ./cmd.sh && exec ./cmd.sh"
+
 networks:
  cbala_net:
   driver: bridge
@@ -26,4 +33,4 @@ networks:
    driver: default
    config:
      - subnet: 172.16.0.0/24
-       gateway: 172.16.0.1
+     - gateway: 172.16.0.1
