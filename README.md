@@ -1,22 +1,27 @@
 # la-singlebox installation
+
 These files will assist you to setup up a CBA Live Assist singlebox solution *for testing/demonstration purposes only*
 
 ### You will need:
+
 - Docker installed and running - Windows or Linux (due to limitations on Docker desktop for Mac this is not supported)
 - FAS, FCSDK and Liveassist installation zip files from the reseller portal
 - Media broker .gz file from the reseller portal
 
 ### Getting Docker installed:
+
 For Windows 10 systems please follow the instructions to install Docker Desktop:  
 https://docs.docker.com/docker-for-windows/install/  
 For Linux systems, use one of the supported platforms and follow along here:  
 https://docs.docker.com/engine/install/#server
 
 ### Build the installer folder:
+
 1. Clone this repo (or download the contents to a new folder)
 2. Extract the FAS, FCSDK and Liveassist zip files to their respective folders under the /installer folder
 3. Add the **media broker .gz** file to the /installer folder
-4. Your folder should then look something like this:
+5. Your folder should then look something like this:
+
 ```
 .
 ├── .env
@@ -45,9 +50,13 @@ https://docs.docker.com/engine/install/#server
         ├── fusion_client_core_sdk_installer-3.3.17.upgrade-install.properties
         └── log4j.properties
 ```
+
 ### Edit the **.env** file to suit your environment:
+
+- Rename or copy the `.env-example` file to be `.env`.
 - Change the CLUSTER_ADDRESS to your docker hosts' reachable IP or DNS
-- **NB:** If you change the FAS_BIND_ADDRESS (default 172.16.0.2) you may also need to edit the subnet/gateway network section in the _docker-compose.yml_ file to match. 
+- **NB:** If you change the FAS_BIND_ADDRESS (default 172.16.0.2) you may also need to update the DOCKER_NET and DOCKER_NET_GATEWAY values to match. 
+
 ```
 CLUSTER_ADDRESS=YOUR.EXT.IP.ADDR  
 JDK_PATH=/usr/java/latest
@@ -57,6 +66,7 @@ LA_PACKS=ASSIST,ASSIST_SDK
 ```
 
 ### Run docker-compose:
+
 Make sure you are in the root of your newly created folder.
 - To start the image pull and installation run:  
 `docker-compose up` (FYI: It takes around 15 min to complete the first time, depending on internet speed)

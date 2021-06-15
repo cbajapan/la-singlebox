@@ -356,4 +356,4 @@ installer/fas/*
 installer/sdk/*
 installer/liveassist/*
 *.DS_Store
-
+.env
