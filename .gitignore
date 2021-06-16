@@ -350,10 +350,10 @@ MigrationBackup/
 .ionide/
 
 # CBA files
-installer/cbala-install-status
-installer/media-broker*
-installer/fas/*
-installer/sdk/*
-installer/liveassist/*
+installer/cbala-install-status*
+installer/*.gz
+installer/*.jar
+installer/*.zip
 *.DS_Store
 .env
+

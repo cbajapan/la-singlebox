@@ -6,6 +6,8 @@ services:
   environment:
     - CLUSTER_ADDRESS
     - FAS_BIND_ADDRESS
+    - ADMIN_USER
+    - ADMIN_PASSWORD
     - JDK_PATH
     - FCSDK_PACKS
     - LA_PACKS
@@ -18,13 +20,13 @@ services:
    - "16000-16004:16000-16004/udp"
   volumes:
    - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-   - ./installer:/installer
+   - ./installer:/installsrc
   cap_add:
    - SYS_ADMIN
   networks:
     cbala_net:
      ipv4_address: ${FAS_BIND_ADDRESS}
-  command: sh -c "chmod +x ./cmd.sh && exec ./cmd.sh"
+  command: sh -c "chmod +x /installsrc/install-la-singlebox.sh && exec /installsrc/install-la-singlebox.sh"
 
 networks:
  cbala_net:
