@@ -32,8 +32,8 @@ if [[ ! -f /installsrc/cbala-install-status ]]; then
       -e "s/(JDKPath=).*/\1${JDK_PATH//\//\\/}/g" \
       -e "s/(packs=).*/\1$FCSDK_PACKS/g" \
       -e "s/(appserver\.admin\.address=).*/\1$FAS_BIND_ADDRESS/g" \
-      -e "s/(admin\.user.*=).*/\1$ADMIN_USER/g" \
-      -e "s/(admin\.password.*=).*/\1$ADMIN_PASSWORD/g" \
+      -e "s/(appserver\.admin\.user.*=).*/\1$ADMIN_USER/g" \
+      -e "s/(appserver\.admin\.password.*=).*/\1$ADMIN_PASSWORD/g" \
       -e "s/(gateway\.controlled_domain=).*/\1$CLUSTER_ADDRESS/g" \
       -e "s/(rtp_proxy_native\.tarball.file=).*/\1${MB_INSTALLER//\//\\/}/g" \
       $SDK_OPTIONS
@@ -54,8 +54,8 @@ if [[ ! -f /installsrc/cbala-install-status ]]; then
       -e "s/(JDKPath=).*/\1${JDK_PATH//\//\\/}/g" \
       -e "s/(packs=).*/\1$LA_PACKS/g" \
       -e "s/(appserver\.admin\.address=).*/\1$FAS_BIND_ADDRESS/g" \
-      -e "s/(admin\.user.*=).*/\1$ADMIN_USER/g" \
-      -e "s/(admin\.password.*=).*/\1$ADMIN_PASSWORD/g" \
+      -e "s/(appserver\.admin\.user.*=).*/\1$ADMIN_USER/g" \
+      -e "s/(appserver\.admin\.password.*=).*/\1$ADMIN_PASSWORD/g" \
       $LA_OPTIONS
       
       echo -e "\e[1;33mInstalling Live Assist: \e[0m"
