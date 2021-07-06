@@ -18,7 +18,8 @@ For Linux systems, use one of the supported platforms and follow along here:
 ### Build the installer folder
 
 1. Clone this repo (or download the contents to a new folder)
-2. Copy the FAS, FCSDK and Liveassist zip files to the /installer folder
+2. Copy the FAS, FCSDK and Liveassist zip files to the /installer folder  
+_Please note: The FAS zip file from the reseller portal contains two zip files, only the "as-installer-x.x.xx.zip" file is needed_
 3. Add the **media broker.gz** and **pluggable_cli_main.jar** files to the /installer folder
 4. Your folder should then look something like this:
 
