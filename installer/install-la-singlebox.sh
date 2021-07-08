@@ -75,9 +75,9 @@ if [[ ! -f /installsrc/cbala-install-status ]]; then
 else
   # Start FAS and Media Broker if install check file is created
   [ -f /etc/init.d/fas ] && /etc/init.d/fas start || \
-  echo -e "\e[1;31mNo fas service file found.\nDelete /installsrc/cbala-install-status to re-install. \e[1;31m"
+  echo -e "\e[1;31mNo fas service file found.\nDelete ./installer/cbala-install-status to re-install. \e[1;31m"
   [ -f /etc/init.d/fusion_media_broker ] && /etc/init.d/fusion_media_broker start || \
-  echo -e "\e[1;31mNo media broker service file found.\nDelete /installer/cbala-install-status to re-install. \e[1;31m"                         
+  echo -e "\e[1;31mNo media broker service file found.\nDelete ./installer/cbala-install-status to re-install. \e[1;31m"                         
 fi
 
 if (( $(ps -ef | grep -v grep | grep fas | wc -l) > 0 )) && \
