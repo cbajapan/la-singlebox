@@ -2,7 +2,7 @@ version: "3.9" # optional since v1.27.0
 services:
  singlebox:
   platform: linux/amd64
-  image: cbajapan/cbala-base
+  image: ghcr.io/cbajapan/cbala-base:main
   environment:
     - CLUSTER_ADDRESS
     - FAS_BIND_ADDRESS
