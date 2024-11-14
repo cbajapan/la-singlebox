@@ -1,11 +1,10 @@
-version: "3.9" # optional since v1.27.0
 services:
- singlebox:
+ master:
   platform: linux/amd64
-  image: cbajapan/cbala-base
+  image: ghcr.io/cbajapan/cbala-base:main
   environment:
     - CLUSTER_ADDRESS
-    - FAS_BIND_ADDRESS
+    - FAS_MASTER_ADDRESS
     - ADMIN_USER
     - ADMIN_PASSWORD
     - JDK_PATH
@@ -25,7 +24,7 @@ services:
    - SYS_ADMIN
   networks:
     cbala_net:
-     ipv4_address: ${FAS_BIND_ADDRESS}
+     ipv4_address: ${FAS_MASTER_ADDRESS}
   command: sh -c "chmod +x /installsrc/install-la-singlebox.sh && exec /installsrc/install-la-singlebox.sh"
 
 networks:
