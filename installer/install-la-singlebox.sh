@@ -67,12 +67,11 @@ if [[ ! -f /installsrc/cbala-install-status ]]; then
       -e "s/(appserver\.admin\.user=).*/\1$ADMIN_USER/g" \
       -e "s/(appserver\.admin\.password=).*/\1$ADMIN_PASSWORD/g" \
       $LA_OPTIONS
-  #          -e "s/(cli\.dir=).*/\1\/opt\/fusion\/cli/g" \
       echo -e "\e[1;33mInstalling Live Assist: \e[0m"
       java -jar $LA_INSTALLER -options $LA_OPTIONS
 
       # Enable Anonymous Agent Access in LA
-      chmod +x /installsrc/mb-singlebox-register.sh && /installsrc/la-singlebox-enable-anon-agents.sh
+      chmod +x /installsrc/la-singlebox-enable-anon-agents.sh && /installsrc/la-singlebox-enable-anon-agents.sh
       else
         exit
     fi
