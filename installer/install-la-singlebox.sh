@@ -71,7 +71,7 @@ if [[ ! -f /installsrc/cbala-install-status ]]; then
       java -jar $LA_INSTALLER -options $LA_OPTIONS
 
       # Enable Anonymous Agent Access in LA
-      chmod +x /installsrc/la-singlebox-enable-anon-agents.sh && /installsrc/la-singlebox-enable-anon-agents.sh
+      chmod +x /installsrc/enable-anon-agents.sh && /installsrc/enable-anon-agents.sh
       else
         exit
     fi

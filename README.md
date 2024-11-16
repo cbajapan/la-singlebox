@@ -31,8 +31,7 @@ For Linux systems, use one of the supported platforms and follow along here:
     ├── fusionweb-installer-x.x.xx.zip
     ├── install-la-singlebox.sh
     ├── mb-singlebox-register.sh
-    ├── la-singlebox-enable-anon-agents.sh
-    └── media-broker-native-el7-x86_64-xx.tar.gz
+    └── enable-anon-agents.sh
 ```
 
 ### Edit the **.env** file to suit your environment
