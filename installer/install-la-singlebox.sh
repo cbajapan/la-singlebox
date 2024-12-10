@@ -29,7 +29,7 @@ if [[ ! -f /installsrc/cbala-install-status ]]; then
       SDK_OPTIONS=$(ls ./sdk/*advanced-install.properties)
       MB_INSTALLER=$(ls -d ./sdk/media-broker-native-*)
       # Edit options file
-      # (FYI - bypassing os check below for compatibility)
+            # FYI -> bypassing 'os check' below for compatibility
       sed -ri -e "s/(accept\.eula=).*/\1true/g" \
       -e "s/(JDKPath=).*/\1${JDK_PATH//\//\\/}/g" \
       -e "s/(packs=).*/\1$FCSDK_PACKS/g" \
@@ -88,12 +88,14 @@ else
   # Start FAS and Media Broker if install check file is created
   [ -f /etc/init.d/fas ] && /etc/init.d/fas start || \
   echo -e "\e[1;31mNo fas service file found.\nDelete ./installer/cbala-install-status to re-install. \e[1;31m"
-  [ -f /etc/init.d/fusion_media_broker ] && /etc/init.d/fusion_media_broker start || \
+  [ -f /usr/lib/fusion_media_broker/service.sh ] && /usr/lib/fusion_media_broker/service.sh start|| \
+        # Removed -> [ -f /etc/init.d/fusion_media_broker ] && /etc/init.d/fusion_media_broker start || \
   echo -e "\e[1;31mNo media broker service file found.\nDelete ./installer/cbala-install-status to re-install. \e[1;31m"                         
 fi
 
 if (( $(ps -ef | grep -v grep | grep fas | wc -l) > 0 )) && \
   (( $(ps -ef | grep -v grep | grep media_broker | wc -l) > 0 )); then
+  echo ""
   echo "   ___ ___   _     _    _             _          _    _   ";
   echo "  / __| _ ) /_\   | |  (_)_ _____    /_\   _____(_)__| |_ ";
   echo " | (__| _ \/ _ \  | |__| \ V / -_)  / _ \ (_-<_-< (_-<  _|";
